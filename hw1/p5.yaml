@@ -1,0 +1,48 @@
+# Please look for "TODO" in the comments, which indicate where you
+# need to write your code.
+#
+# Part 5: Providing Project Ideas (1 points)
+#
+# * Objective:
+#   Provide draft project ideas in order to form teams.
+# * Details:
+#   * This part ensures student start putting time to brainstorm their
+#     (mid-term) projects.
+#   * Your submission should include three project ideas based on the
+#     topics that are covered in the first half of this course:
+#     * Data Representation and Errors
+#     * Numerical Linear Algebra
+#     * Fourier Transform and Spectral Analysis
+#     * Interpolation and Extrapolation
+#     * Numerical and Automatic Derivatives
+#     * Numerical Integration of Functions
+#     * Root Finding and Optimization Methods
+#     * ODE Integrators
+#     * PDE Solvers
+#   * You submission will be a well formatted YAML file `hw1/p5.yaml`.
+#
+# About YAML:
+# * YAML (short for "YAML Ain't Markup Language") is a human-readable
+#   format for data storage and configuration.
+# * YAML uses Python-style indentation for nesting and avoids the use
+#   of extraneous characters, making it easy to read.
+# * Comments in YAML start with `#` and continue until the end of the line.
+#
+# Submission Requirement:
+# * Your submission must be a valid YAML file that can be read by Python.
+# * It should contain a list of three dictionaries, each with the following keys:
+#   * "topic": Choose one of the topics listed above.
+#   * "idea": Provide a short, clear, and concise description of your project idea.
+#
+# Below is a sample project idea.
+
+# TODO: Edit this sample idea.
+
+- topic: Numerical Linear Algebra
+  idea:  Develop a fast matrix multiplication algorithm to reduce
+         energy consumption during deep learning inference.
+
+# TODO: Add two more project ideas below, following the same format as
+# the example above.
+# Remember to ensure that each idea is distinct and concise, and each
+# "topic" must be one of the listed course topics.
