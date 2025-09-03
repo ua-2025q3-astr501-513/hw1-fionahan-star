@@ -1,3 +1,5 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/r-eqz-mO)
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=20185031&assignment_repo_type=AssignmentRepo)
 # ASTR 513 Homework Set #1
 
 Welcome to the repository for **Homework Set #1** in ASTR 513.
@@ -61,8 +63,8 @@ and maximize your score.
 ### Part 4: Solve the Coupled Simple Harmonic Oscillator Problem (1 point)
 
 * Objective:
-  Implement an eigenvalue solver to decompose coupled simple harmonic
-  sscillators into eigenmodes, and solve it semi-analytically.
+  Take the coupled harmonic oscillator problem we solved in class
+  and rewrite it using a well-structured Python class.
 * Details:
   The description of the problem and the solution template can be
   found in `hw1/p4.py`.
@@ -124,4 +126,4 @@ to ensure your latest work are seen.
   Be mindful of the submission deadline, as late submissions will not
   be accepted.
 
-Good luck!
+Good luck!!!

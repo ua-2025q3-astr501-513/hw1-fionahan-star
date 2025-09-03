@@ -1,0 +1,23 @@
+# ASTR 513 Homework Set #1
+#
+# Part 1.
+#
+# This "pyproject.toml" file is used by python to configure a package.
+# The minimal required fields are `name` and `version`.
+# For this homework, because we use `pytest` to auotmatically grade
+# the homework, we should also include `dependencies` to list at least
+# "pytest".
+#
+# Your are asked to fill in details in "pyproject.toml" and add a
+# "LICENSE" file to this repository.
+# This turns your homework set into a pip-installable python package.
+#
+# You may test your work by running `pip install -e .`
+
+[project]
+name = "hw1"
+version = ...
+dependencies = [
+    "pytest",  # must include pytest because we use it for autograding
+    ...
+]

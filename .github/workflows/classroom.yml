@@ -54,7 +54,7 @@ jobs:
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: p5
-        setup-command: pip install -e .
+        setup-command: pip install pyyaml && pip install -e .
         command: pytest -s .github/autograding/test-p5.py
         timeout: 10
         max-score: 1
