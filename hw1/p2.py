@@ -89,6 +89,28 @@ def multibit_negative(A):
     """
     # TODO: implement the function here
 
+    # two's complement: 
+    
+    # Write the binary representation of its absolute value.
+    # ...done in the input
+    
+    # Invert all the bits (change 1 to 0 and 0 to 1).
+    negated_A = []
+    for i in range(len(A)):
+        negated_A.append(NOT(A[i]))
+        
+    # Add 1 to the result.
+    # Call the multibit adder to do this.
+    # Due to the assert(len(A) == len(B)) line, we need to pass in two lists of equal length?
+    # Create a 1 list.
+    onelist = [0, 1]
+    for i in range(len(A)-2):
+        onelist.append(0)
+    # Then add together using multibit adder.
+    out = multibit_adder(negated_A, onelist, carrybit=False)
+    # Finally, out is the list representation of our negated A. 
+    return out
+
 # We are now ready to implement subtraction using multibit_adder() and
 # multibit_negative().
 
@@ -110,3 +132,10 @@ def multibit_subtractor(A, B):
 
     """
     # TODO: implement the function here
+    # Idea: 
+    # Negate B, then do A + negB.
+    negB = multibit_negative(B)
+    # do A + negB:
+    out = multibit_adder(A, negB)
+
+    return out

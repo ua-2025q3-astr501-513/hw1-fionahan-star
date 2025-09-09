@@ -46,9 +46,41 @@ class CoupledOscillators:
 
         """
         # TODO: Construct the stiffness matrix K
+        self.dims = len(X0)
+        K = np.zeros((self.dims, self.dims))
+        for j in range(self.dims):
+            if j != 0:
+                K[j][j-1] = 1
+                
+            K[j][j] = -2
+            
+            if j != self.dims-1:
+                K[j][j+1] = 1
+                
+        stiff_K = K
+        
         # TODO: Solve the eigenvalue problem for K to find normal modes
+        # Here we call on the numpy module to do the heavylift. 
+        l, v = np.linalg.eig(stiff_K)
+        
         # TODO: Store angular frequencies and eigenvectors
+        # v contains the eigenvalues and l contains the eigenvectors. 
+        # To translate between eigenvalues and angular frequencies, note that the eigenvalues we found
+        # are actually m * omega**2. Retrieve the angular frequencies as such. 
+        self.Omega = np.sqrt(abs(l) * k / m)
+        self.V = v
+        # The eigenvectors are unchanged. Although they are a matrix now.
+        # We can use these eigenvectors to find the decompositions back to x (non-normal coordinates).
+        
         # TODO: Compute initial modal amplitudes M0 (normal mode decomposition)
+        # eig gives normalized eigenvectors so we should be able to do (x dot v)*v summed up?
+        M0 = np.zeros(self.dims)
+        for i in range(self.dims):
+            # Dot product X0 and each of the eigenvectors for component on that direction. 
+            temp = np.dot(X0, v[:, i])
+            M0[i] = temp
+        # and done. 
+        self.M0 = M0
 
     def __call__(self, t):
         """Calculate the displacements of the oscillators at time t.
@@ -61,7 +93,15 @@ class CoupledOscillators:
 
         """
         # TODO: Reconstruct the displacements from normal modes
-
+        # To switch back to the original basis use the change of basis matrix. Which happened to be V. 
+        cobmat = self.V
+        # And first we evolve things in the normal coordinate.
+        locarr = np.zeros(self.dims)
+        for i in range(self.dims):
+            locarr[i] = self.M0[i] * np.cos(self.Omega[i] * t)
+        # Now we change of basis back:
+        X = np.matmul(cobmat, locarr)
+        return X
 
 if __name__ == "__main__":
 

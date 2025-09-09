@@ -65,3 +65,22 @@ def quadratic(a, b, c):
                 If there is no real root, x1 == x2 == None.
     """
     # TODO: implement the stable quadratic equation solver here
+
+    # first let's just see if there are two x1 and x2:
+    # The determinator is b^2 - 4ac.
+    det = b**2 - 4*a*c
+    if det < 0:
+        return None, None
+    elif det == 0:
+        # Here we can calculate the root directly since det = 0
+        x1 = -1 * b / (2*a)
+        return x1, None
+    else: 
+        # Here both roots exist in the real number field
+        # Let's use x1 and x2 for now. Then determine which one is smaller. 
+        x1 = (-1*b - (b/abs(b)) * (b**2 - 4*a*c)**0.5) / (2*a)
+        x2 = (c / a) / x1
+        if x1 < x2:
+            return x1, x2
+        else: 
+            return x2, x1
