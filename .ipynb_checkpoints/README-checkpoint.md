@@ -127,6 +127,3 @@ to ensure your latest work are seen.
   be accepted.
 
 Good luck!!!
-
-## Submission notes: declaration on AI usage
-I have used ChatGPT in assisting with the submission workflow (the whole pushing-into-this-repo process), and requesting more explanation of `.yaml` and `.toml` files (this is my first time of encountering both, and while the comments include some informations it is not completely clear to me as to how to format these files), as well as learning how to use `pytest` and interpreting its output. All the codes, examples, etc are my own work. 
